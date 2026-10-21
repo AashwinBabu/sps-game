@@ -1,0 +1,419 @@
+
+
+.arcade-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
+  overflow: auto;
+
+  color: #F4EFE5;
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      rgba(200, 185, 149, 0.08),
+      transparent 55%
+    ),
+    #111110;
+
+  animation: introFadeIn 0.6s ease both;
+}
+
+/* Subtle background grid */
+.arcade-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(200, 185, 149, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(200, 185, 149, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+.arcade-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 560px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* Top label */
+.arcade-kicker {
+  color: #C8B995;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 3px !important;
+}
+
+/* Main title */
+.arcade-title {
+  margin: 14px 0 !important;
+
+  color: #F4EFE5;
+  font-size: clamp(32px, 5.5vw, 48px) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  letter-spacing: 2px !important;
+
+  animation: titleReveal 0.7s ease both;
+}
+
+.neon-cyan {
+  color: #C8B995;
+}
+
+.neon-purple {
+  color: #F4EFE5;
+}
+
+/* Subtitle */
+.arcade-subtitle {
+  color: #A9A397;
+  font-size: 10px !important;
+  letter-spacing: 1.8px !important;
+  line-height: 1.6 !important;
+}
+
+/* Move cards */
+.arcade-hands {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+
+  margin: 22px 0;
+}
+
+.arcade-hand {
+  position: relative;
+
+  width: 92px;
+  height: 86px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: linear-gradient(
+    145deg,
+    #22211D,
+    #191815
+  );
+
+  border: 1px solid #403B30;
+  border-radius: 12px;
+
+  animation: cardReveal 0.6s ease both;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.arcade-hand:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.arcade-hand:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.arcade-hand:hover {
+  border-color: #C8B995;
+  background: #29261F;
+  transform: translateY(-3px);
+}
+
+.arcade-emoji {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.arcade-label {
+  color: #C8B995;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Intro description */
+.arcade-description {
+  display: none;
+}
+
+/* ==========================================
+   HOW TO PLAY
+========================================== */
+
+.arcade-how-to-play {
+  width: 100%;
+  max-width: 460px;
+  box-sizing: border-box;
+
+  margin: 0 auto;
+  padding: 14px 18px;
+
+  text-align: left;
+
+  background: rgba(29, 28, 25, 0.9);
+  border: 1px solid #514936;
+  border-radius: 12px;
+
+  animation: cardReveal 0.6s ease 0.2s both;
+}
+
+.arcade-how-title {
+  margin-bottom: 8px !important;
+
+  color: #C8B995;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+}
+
+.arcade-rule {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 9px 0;
+}
+
+.arcade-rule + .arcade-rule {
+  border-top: 1px solid #353229;
+}
+
+.arcade-rule-number {
+  flex-shrink: 0;
+  min-width: 26px;
+
+  color: #C8B995;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.arcade-rule-heading {
+  margin-bottom: 4px !important;
+
+  color: #F4EFE5;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.arcade-rule-text {
+  color: #C4BFB3;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================
+   START GAME BUTTON
+========================================== */
+
+.arcade-start {
+  margin-top: 16px !important;
+  padding: 13px 30px !important;
+
+  color: #111110 !important;
+  background: #C8B995 !important;
+
+  border: 1px solid #C8B995 !important;
+  border-radius: 8px !important;
+
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px !important;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+.arcade-start:hover {
+  color: #111110 !important;
+  background: #F4EFE5 !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 20px rgba(200, 185, 149, 0.12) !important;
+}
+
+.arcade-start:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   LAPTOPS WITH SHORTER SCREENS
+========================================== */
+
+@media (max-height: 750px) {
+  .arcade-intro {
+    padding: 10px 16px;
+  }
+
+  .arcade-title {
+    margin: 9px 0 !important;
+    font-size: clamp(30px, 5vh, 40px) !important;
+  }
+
+  .arcade-hands {
+    margin: 13px 0;
+  }
+
+  .arcade-hand {
+    height: 72px;
+  }
+
+  .arcade-emoji {
+    font-size: 27px;
+  }
+
+  .arcade-how-to-play {
+    padding: 10px 16px;
+  }
+
+  .arcade-how-title {
+    margin-bottom: 4px !important;
+  }
+
+  .arcade-rule {
+    padding: 6px 0;
+  }
+
+  .arcade-start {
+    margin-top: 10px !important;
+    padding: 11px 26px !important;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 380px) {
+  .arcade-intro {
+    padding: 10px;
+  }
+
+  .arcade-kicker {
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+  }
+
+  .arcade-title {
+    font-size: 29px !important;
+    letter-spacing: 1px !important;
+  }
+
+  .arcade-hands {
+    gap: 8px;
+  }
+
+  .arcade-hand {
+    width: 28%;
+    max-width: 80px;
+    height: 72px;
+  }
+
+  .arcade-emoji {
+    font-size: 27px;
+  }
+
+  .arcade-how-to-play {
+    padding: 10px 12px;
+  }
+
+  .arcade-rule {
+    gap: 8px;
+  }
+
+  .arcade-rule-heading {
+    font-size: 13px !important;
+  }
+
+  .arcade-rule-text {
+    font-size: 12px !important;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .arcade-intro,
+  .arcade-intro * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
